@@ -4,7 +4,7 @@ define('MATRIX_LENGTH', 3);
 
 $game1 = [["X","O","O"],["O","X","O"],["-","O","X"]];
 $game2 = [["O","X","-"],["O","X","-"],["O","-","-"]];
-$game3 = [["O","X","O"],["X","O","X"],["X","X","O"]];
+$game3 = [["O","X","O"],["O","X","O"],["X","O","X"]];
 $game4 = [["-","-","-"],["O","O","-"],["X","X","X"]];
 
 $games = [$game1,$game2,$game3,$game4];
@@ -39,6 +39,10 @@ $checker_functions = [
 foreach($games as $game) {
     foreach($checker_functions as $key => $checker_function) {
         $result = $checker_function($game);
-        if($result !== false) echo "Winner is ".$result." by ".$key.PHP_EOL;
+        if($result !== false) {
+            echo "Winner is ".$result." by ".$key.PHP_EOL;
+            break;
+        }
     }
+    if($result === false) echo "Empat!".PHP_EOL;
 }
