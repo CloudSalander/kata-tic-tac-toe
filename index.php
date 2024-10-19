@@ -28,7 +28,15 @@ function checkColumns(array $game): string | bool {
     return false;
 }
 
-var_dump(checkColumns($game1));
-var_dump(checkColumns($game2));
-var_dump(checkColumns($game3));
-var_dump(checkColumns($game4));
+function checkDiagonals(array $game): string | bool {
+    if ((($game[0][0] == $game[1][1]) && ($game[1][1] == $game[2][2]) && $game[0][0] != "-")
+         ||
+        (($game[0][2] == $game[1][1]) && ($game[1][1] == $game[2][0]) && $game[0][2] != "-"))
+          return $game[1][1];
+    return false;
+}
+
+var_dump(checkDiagonals($game1));
+var_dump(checkDiagonals($game2));
+var_dump(checkDiagonals($game3));
+var_dump(checkDiagonals($game4));
