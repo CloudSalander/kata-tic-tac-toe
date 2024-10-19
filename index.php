@@ -12,19 +12,23 @@ $game4 = [["-","-","-"],["O","O","-"],["X","X","X"]];
 function checkRows(array $game): string | bool {
     for($i = 0; $i < MATRIX_LENGTH; ++$i) {
         $row = $game[$i];
-        if(($row[0] == $row[1]) && ($row[1] == $row[2]) && $row[0] != "-") return $row[0];
+        if(($row[0] == $row[1]) 
+            && ($row[1] == $row[2]) 
+            && $row[0] != "-") return $row[0];
     }
     return false;
 }
 
 function checkColumns(array $game): string | bool {
     for($j = 0; $j < MATRIX_LENGTH; ++$j) {
-        $column = $game[$j];
-        var_dump($column);
-        if(($column[0] == $column[1]) && ($column[1] == $column[2]) && $column[0] != "-")  return $column[0];
+        if(($game[0][$j] == $game[1][$j]) 
+            && $game[1][$j] == $game[2][$j] 
+            && $game[0][$j] != "-")  return $game[0][$j];
     }
     return false;
 }
 
 var_dump(checkColumns($game1));
 var_dump(checkColumns($game2));
+var_dump(checkColumns($game3));
+var_dump(checkColumns($game4));
