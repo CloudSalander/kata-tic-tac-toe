@@ -16,8 +16,8 @@ OX-
 O--  
 
 OXO  
-XOX  
-XXO  
+OXO      
+XOX    
 
 **Output**
 
